@@ -1,0 +1,38 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                sh 'docker build -t yourname/bluegreen-app:v2 .'
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                sh 'docker push yourname/bluegreen-app:v2'
+            }
+        }
+
+        stage('Deploy Green') {
+            steps {
+                sh 'kubectl apply -f green-deployment.yaml'
+            }
+        }
+
+        stage('Manual Approval') {
+            steps {
+                input message: 'Switch traffic to GREEN?'
+            }
+        }
+
+        stage('Switch Traffic') {
+            steps {
+                sh '''
+                kubectl patch service myapp-service \
+                -p '{"spec":{"selector":{"app":"myapp","version":"green"}}}'
+                '''
+            }
+        }
+    }
+}
