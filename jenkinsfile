@@ -1,0 +1,29 @@
+pipeline {
+  agent any
+
+  stages {
+    stage('Clone Repo') {
+      steps {
+        git 'https://github.com/yourrepo/blue-green-k8s.git'
+      }
+    }
+
+    stage('Build Docker Image') {
+      steps {
+        sh 'docker build -t yourdockerhub/blue-green-app:${BUILD_NUMBER} .'
+      }
+    }
+
+    stage('Push Image') {
+      steps {
+        sh 'docker push yourdockerhub/blue-green-app:${BUILD_NUMBER}'
+      }
+    }
+
+    stage('Deploy Green') {
+      steps {
+        sh 'kubectl apply -f k8s/green-deployment.yaml'
+      }
+    }
+  }
+}
