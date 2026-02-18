@@ -52,6 +52,10 @@ Deploy Green in Kubernetes
       ↓
 Switch Service Traffic
 
+
+
+
+
 📂 Project Structure
 blue-green-ci-cd/
 │
@@ -67,6 +71,9 @@ blue-green-ci-cd/
 │   └── service.yaml
 │
 └── README.md
+
+
+
 
 🌐 Application Output
 🔵 Version 1 – Blue Environment
