@@ -2,7 +2,7 @@
 
 ## 🏗 Architecture Diagram
 
-![Blue-Green CI/CD Architecture](blue-green-ci-cd-architecture.png)
+blue-green-ci-cd-architecture.png
 
 
 
