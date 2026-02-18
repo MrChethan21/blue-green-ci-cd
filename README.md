@@ -1,3 +1,11 @@
+
+
+## 🏗 Architecture Diagram
+
+![Blue-Green CI/CD Architecture](blue-green-ci-cd-architecture.png)
+
+
+
 🚀 Blue-Green CI/CD Deployment using Jenkins, Docker & Kubernete
 
 
