@@ -53,28 +53,6 @@ Deploy Green in Kubernetes
 Switch Service Traffic
 
 
-
-
-
-📂 Project Structure
-blue-green-ci-cd/
-│
-├── app/
-│   └── index.html
-│
-├── Dockerfile
-├── Jenkinsfile
-│
-├── k8s/
-│   ├── blue-deployment.yaml
-│   ├── green-deployment.yaml
-│   └── service.yaml
-│
-└── README.md
-
-
-
-
 🌐 Application Output
 🔵 Version 1 – Blue Environment
 Version 1 - Blue Environment
